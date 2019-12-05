@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ARK_PROTAL.iml" filepath="$PROJECT_DIR$/../ARK_PROTAL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../THE_ARK_PROTAL/THE_ARK_PROTAL.iml" filepath="$PROJECT_DIR$/../THE_ARK_PROTAL/THE_ARK_PROTAL.iml" />
+    </modules>
+  </component>
+</project>

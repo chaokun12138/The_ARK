@@ -1,0 +1,33 @@
+server:
+  port: 10000
+spring:
+  application:
+    name: ark-api-gateway
+eureka:
+  instance:
+    prefer-ip-address: true #注册时使用ip地址注册
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://127.0.0.1:10010/eureka
+zuul:
+  prefix: /api #网关前缀
+  retryable: true #是否重试
+  routes:
+    dietary-service: /dietary/**
+    #映射的服务...
+ribbon:
+  ConnectTimeout: 250 # 连接超时时间 (ms)
+  ReadTimeout: 2000 # 通信超时时间 (ms)
+  OkToRetryOnAllOperations: true # 是否对所有操作重试
+  MaxAutoRetriesNextServer: 1 # 同一服务不同实例的重试次数
+  MaxAutoRetries: 1 # 同一实例的重试次数
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000 # 熔断超时时长： 10000ms

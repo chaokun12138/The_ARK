@@ -1,0 +1,25 @@
+server:
+  port: 8091
+spring:
+  application:
+    name: ark-upload
+Oss:
+  check:
+    endPoint: "oss-cn-beijing.aliyuncs.com"
+    accessKeyId: "LTAI4Fw9KZqEx4VgaeSZyiRV"
+    accessKeySecret: "Nyp4m6QsApWxu0tbZShMPmspKj4cpz"
+  login:
+    bucketName: "the-ark-images"
+    urlPrefix:  "https://the-ark-images.oss-cn-beijing.aliyuncs.com/"
+    fileHost: "dietary"
+eureka:
+  client:
+    service-url:
+      defaultZone:
+        http://127.0.0.1:10010/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}

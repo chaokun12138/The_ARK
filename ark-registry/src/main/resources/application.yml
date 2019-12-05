@@ -1,0 +1,14 @@
+server:
+  port: 10010
+spring:
+  application:
+    name: ark-registry
+eureka:
+  client:
+    fetch-registry: false #关闭表明自己是一个eureka服务
+    register-with-eureka: false #关闭 向自己注册 进行集群的时候需要开启
+    service-url:
+      defaultZone: http://127.0.0.1:${server.port}/eureka
+  server:
+    enable-self-preservation: false # 关闭自我保护
+    eviction-interval-timer-in-ms: 5000 # 每隔 5 秒进行一次服务列表清理
